@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  position: relative;
+  overflow: scroll;
+  background: white;
+  min-height: 70vh;
+  width: 70%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 10px;
+  z-index: 3;
+  backdrop-filter: blur(0.2rem);
+}
+
+.glass1 {
+  position: absolute;
+  bottom: 3%;
+  background: transparent;
+  min-height: 10vh;
+  width: 70%;
+  border-radius: 10px;
+}
+
+.flex {
+  justify-content: space-evenly;
+}
+
+.glass .container {
+  height: 70vh;
+}
+
+.circle1,
+.circle2 {
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.1)
+  );
+  height: 15rem;
+  width: 15rem;
+  z-index: 0;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  top: 5%;
+  right: 40%;
+}
+
+.circle2 {
+  bottom: 5%;
+  left: 5%;
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  right: 5%;
+}
+
+a {
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: "Roboto";
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #03a9f4, #f441a4, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 10px;
+  border: 1px solid #000;
+  z-index: 1000;
+  cursor: pointer;
+}
+a:hover {
+  animation: animate 8s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+a:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  right: -5px;
+  left: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a4, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 40px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: 0.5s;
+}
+a:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
+}
