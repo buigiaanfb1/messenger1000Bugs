@@ -138,6 +138,7 @@ const Home = (props) => {
 
   return (
     <div>
+      {console.log("1")}
       <main>
         <section className="glass">
           <div className="container">

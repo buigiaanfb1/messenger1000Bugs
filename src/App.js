@@ -3,10 +3,18 @@ import { Link, BrowserRouter, Switch, Route } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import { FETCH_ACCOUNT_API, USER_LOGIN } from "./redux/constants";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 function App() {
+  const [time, setTime] = useState(Date.now());
+  useEffect(() => {
+    let interval = setInterval(() => setTime({ time: Date.now() }), 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  });
+
   return (
     <div className="App">
       <BrowserRouter>
