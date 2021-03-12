@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 function App() {
   const [time, setTime] = useState(Date.now());
   useEffect(() => {
-    let interval = setInterval(() => setTime({ time: Date.now() }), 1000);
+    let interval = setInterval(() => setTime({ time: Date.now() }), 5000);
     return () => {
       clearInterval(interval);
     };

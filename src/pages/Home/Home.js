@@ -83,7 +83,7 @@ const Home = (props) => {
       type: FETCH_MESSAGES_API,
     });
     setMessenger(credentials);
-  }, []);
+  });
 
   useEffect(() => {
     getCredentialsFromLocal();
